@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+    <xsd:element name="bourse">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="societe" maxOccurs="unbounded" type="T_SOCI"></xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:complexType name="T_SOCI">
+        <xsd:sequence>
+            <xsd:element name="codeSociete" maxOccurs="1" type="xsd:string"></xsd:element>
+            <xsd:element name="nomSoci" maxOccurs="1" type="xsd:string"></xsd:element>
+            <xsd:element name="dateIntroduction" maxOccurs="1" type="xsd:date" ></xsd:element>
+            <xsd:element name="cotations" maxOccurs="1" type="T_COTS"></xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="type" default="banque">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="banque"></xsd:enumeration>
+                    <xsd:enumeration value="assurance"></xsd:enumeration>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:attribute>
+    </xsd:complexType>
+    <xsd:complexType name="T_COTS">
+        <xsd:sequence>
+            <xsd:element name="cotation" maxOccurs="unbounded" type="T_COT"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="T_COT">
+        <xsd:attribute name="num" type="xsd:int" use="required"></xsd:attribute>
+        <xsd:attribute name="dateCotation" type="xsd:date" use="required"></xsd:attribute>
+        <xsd:attribute name="valeurAction" type="xsd:int" use="required"></xsd:attribute>
+    </xsd:complexType>
+    
+</xsd:schema>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bourse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:/C:/Users/DELL/Desktop/Projet/xml/Bourse/bourse.xsd">
+    <societe type="banque">
+        <codeSociete>SGMB</codeSociete>
+        <nomSoci>Société Générale</nomSoci>
+        <dateIntroduction>2000-11-01</dateIntroduction>
+        <cotations>
+            <cotation num="23" dateCotation="2010-01-01" valeurAction="650"/>
+            <cotation num="22" dateCotation="2020-11-04" valeurAction="100"/>
+        </cotations>
+    </societe>
+    <societe type="assurance">
+        <codeSociete>AMOS</codeSociete>
+        <nomSoci>Société Amos</nomSoci>
+        <dateIntroduction>2015-11-04</dateIntroduction>
+        <cotations>
+            <cotation num="10" dateCotation="2010-01-01" valeurAction="60"/>
+        </cotations>
+    </societe>
+</bourse>
